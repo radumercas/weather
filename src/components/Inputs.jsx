@@ -14,6 +14,10 @@ function Inputs({ setQuery, units, setUnits }) {
     if (city !== "") setQuery({ q: city });
   };
 
+  const handleSearchKeyPress = (e) => {
+    if (e.key === 'Enter') setQuery({ q: city });
+  }
+
   const handleLocationClick = () => {
     if (navigator.geolocation) {
       toast.info("Fetching users location.");
@@ -40,6 +44,7 @@ function Inputs({ setQuery, units, setUnits }) {
           type="text"
           placeholder="Weather in your city"
           className="text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase rounded-md"
+          onKeyDown={handleSearchKeyPress}
         />
         <UilSearch
           size={25}
