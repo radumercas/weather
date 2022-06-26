@@ -42,7 +42,7 @@ function Inputs({ setQuery, units, setUnits }) {
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}
           type="text"
-          placeholder="Weather in your city"
+          placeholder="Weather in your location"
           className="text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase rounded-md"
           onKeyDown={handleSearchKeyPress}
         />
