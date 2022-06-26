@@ -10,9 +10,28 @@ function Forecast({ title, items }) {
       </div>
       <hr className="my-2" />
 
-      <div className="flex flex-row items-center justify-between mb-6 text-white">
-        {items.map((item) => (
+      <div className="flex flex-row items-center justify-between text-white">
+        {/* this has missing key and will show error in browser console
+        update added index to loop and
+        key attribute to the div element */}
+
+        {/* {items.map((item) => (
           <div className="flex flex-col items-center justify-center">
+            <p className="font-light text-sm">{item.title}</p>
+            <img
+              src={iconUrlFromCode(item.icon)}
+              className="w-12 my-1"
+              alt=""
+            />
+            <p className="font-medium">{`${item.temp.toFixed()}°`}</p>
+          </div>
+        ))} */}
+
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center"
+          >
             <p className="font-light text-sm">{item.title}</p>
             <img
               src={iconUrlFromCode(item.icon)}
